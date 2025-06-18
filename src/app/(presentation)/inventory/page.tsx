@@ -16,7 +16,7 @@ export default async function InventoryPage(props: PageProps) {
 
     return (
         <>
-          <ClassifiedsList classifieds={classifieds} /> 
+          <ClassifiedsList classifieds={classifieds} favourites={[]} /> 
         </>
     );
 }
