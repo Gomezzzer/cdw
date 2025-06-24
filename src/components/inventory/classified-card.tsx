@@ -22,83 +22,55 @@ function formatNumber(
     return new Intl.NumberFormat("en-GB", options).format(num);
 }
 // Add this enum definition if not already imported from elsewhere
-enum OdoUnit {
-    MILES = "miles",
-    KILOMETERS = "kilometers",
-}
+// Remove local OdoUnit enum and use the Prisma one
+import { $Enums } from "@prisma/client";
 
-function formatOdometerUnit(unit: OdoUnit) {
-    return unit === OdoUnit.MILES ? "mi" : "km";
+function formatOdometerUnit(unit: $Enums.OdoUnit) {
+    return unit === $Enums.OdoUnit.MILES ? "mi" : "km";
 }
  
-enum Transmission {
-    AUTOMATIC = "automatic",
-    MANUAL = "manual",
-}
-
-function formatTransmission(transmission: Transmission) {
-    return transmission === Transmission.AUTOMATIC ? "Automatic" : "Manual";
+function formatTransmission(transmission: $Enums.Transmission) {
+    return transmission === $Enums.Transmission.AUTOMATIC ? "Automatic" : "Manual";
 }  
 
-enum FuelType {
-    PETROL = "petrol",
-    DIESEL = "diesel",
-    ELECTRIC = "electric",
-    HYBRID = "hybrid",
-}
-
-function formatFuelType(fuelType: FuelType) {
+function formatFuelType(fuelType: $Enums.FuelType) {
     switch (fuelType) {
-        case FuelType.PETROL:
+        case $Enums.FuelType.PETROL:
             return "Petrol";
-        case FuelType.DIESEL:
+        case $Enums.FuelType.DIESEL:
             return "Diesel";
-        case FuelType.ELECTRIC:
+        case $Enums.FuelType.ELECTRIC:
             return "Electric";
-        case FuelType.HYBRID:
+        case $Enums.FuelType.HYBRID:
             return "Hybrid";
         default:
             return "Unknown";
     }   
 }
 
-enum Colour {
-    RED = "red",
-    BLUE = "blue",
-    GREEN = "green",
-    BLACK = "black",
-    WHITE = "white",
-    SILVER = "silver",
-    YELLOW = "yellow",
-    GRAY = "gray",
-    ORANGE = "orange",
-    PURPLE = "purple",
-    PINK = "pink",
-}
-
-function formatColour(colour: Colour) {
+function formatColour(colour: $Enums.Colour) {
     switch (colour) {
-        case Colour.RED:
+        case $Enums.Colour.RED:
             return "Red";
-        case Colour.BLUE:
+        case $Enums.Colour.BLUE:
             return "Blue";
-        case Colour.GREEN:
+        case $Enums.Colour.GREEN:
             return "Green";
-        case Colour.BLACK:
+        case $Enums.Colour.BLACK:
             return "Black";
-        case Colour.WHITE:
+        case $Enums.Colour.WHITE:
             return "White";
-        case Colour.SILVER:
+        case $Enums.Colour.SILVER:
             return "Silver";
-        case Colour.YELLOW:
+        case $Enums.Colour.YELLOW:
             return "Yellow";
-        case Colour.GRAY:
+        case $Enums.Colour.GREY:
             return "Gray";
-        case Colour.ORANGE:
+        case $Enums.Colour.ORANGE:
             return "Orange";
-        case Colour.PURPLE:
+        case $Enums.Colour.PURPLE:
             return "Purple";
-        case Colour.PINK:
+        case $Enums.Colour.PINK:
             return "Pink";
         default:
             return "Unknown";
